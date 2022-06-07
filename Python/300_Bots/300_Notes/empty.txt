@@ -1,0 +1,43 @@
+DISCORD BOT CODE
+import os
+import random
+import discord
+
+my_secret = os.environ['TOKEN']
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+  print('{0.user} has arrived'.format(client))
+
+client.run(my_secret)
+
+@client.event
+async def on_message(message):
+  if message.author == client.user:
+    return
+
+
+
+@client.event
+async def on_message():
+  if message.content.startswith('aw_hello'):
+    await message.channel.send('Hello!')
+
+
+questionlist = ["What is your favorite color?","What is your favorite food?","What if your favorite school subject?","What is your favorite ice cream flavor?","If you could have any superpower, what would it be?","What is your favorite video game?","What is your favorite animal?","Do you like sports?","What are some of your interests?","What is a trait you have that you are proud of?","Who do you look up to in life?","What is your dream job?","Do you have a pet? If so, what is it?","What is your favorite book/book series?","What is your favorite movie?","What is an accomplishment that you are proud of?","If you could spend a day with any famous person, who would it be?","What is your least favorite food?","What is your least favorite school subject?"]
+
+x = 0
+
+@client.event
+async def on_message():   
+  if message.content.startswith('aw_question'):
+    x = random.randrange(0,len(questionlist))
+    await message.channel.send(x)
+
+y = ""
+@client.event
+async def on_message():
+  if message.content.startswith('aw_coinflip'):
+    await message.channel.send('')

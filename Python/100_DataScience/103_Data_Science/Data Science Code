@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt # import matlab plotting!
+plt.rcParams.update({'font.size': 20, 'figure.figsize': (10, 8)}) # set font and plot size to be larger
+
+
+births_df = pd.read_csv("births.csv")
+
+births_df.info()
+
+births_df['month'].plot(kind = 'hist', title = 'month')
+
+births_df.plot(kind ='scatter',x = 'year',y = 'gender',title = 'Year vs Gender')

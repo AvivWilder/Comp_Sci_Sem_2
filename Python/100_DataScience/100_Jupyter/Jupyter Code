@@ -1,0 +1,7 @@
+x = int(input("Enter box width"))
+y = int(input("Enter box height"))
+c = input("Enter a character")
+for i in range (0,y):
+    for i in range (0,x):
+        print(c, end = "")
+    print("")

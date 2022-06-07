@@ -1,0 +1,5 @@
+movies_df['Year'].plot(kind='hist',title='Release Year')
+movies_df.plot(kind = 'scatter', x = 'Year', y = 'Metascore', title = 'Metascore vs. Release Year')
+metascore = movies_df['Metascore']
+metascore_mean = metascore.mean()
+metascore_mean
